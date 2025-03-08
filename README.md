@@ -1,6 +1,18 @@
-# pjsekai-terms-diff
+# pjsekai terms diff checker
 
-To install dependencies:
+プロセカの二次創作ガイドラインを監視し、変更があった場合に自動でコミットを行います。  
+現在週1で動いています。
+
+プロジェクトセカイ 二次創作ガイドライン  
+https://pjsekai.sega.jp/guideline/index.html
+
+ガイドラインの差分はこちらのMDに更新されていきます。  
+[TERMS.md](TERMS.md)
+
+**更新があった場合、こちらに差分がコミットされる想定です。**  
+https://github.com/ririo08/pjsekai-terms-diff/commits/main/TERMS.md
+
+## Setup
 
 ```bash
 bun install
@@ -9,7 +21,7 @@ bun install
 To run:
 
 ```bash
-bun run index.ts
+bun start
 ```
 
-This project was created using `bun init` in bun v1.2.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+監視開始日：2025/03/08
