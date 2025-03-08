@@ -1,0 +1,32 @@
+name: Weekly Check Diff
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run generation command
+        run: |
+          bun i
+          bun start
+
+      - name: Check for changes and commit if any
+        run: |
+          # Gitのユーザー情報を設定（任意）
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          # 変更があるか確認
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected. Committing..."
+            git add .
+            git commit -m "Automated update: $(date)"
+            git push
+          else
+            echo "No changes found."
+          fi

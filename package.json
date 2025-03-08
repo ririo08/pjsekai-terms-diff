@@ -1,0 +1,20 @@
+{
+  "name": "pjsekai-terms-diff",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/turndown": "^5.0.5",
+    "ofetch": "^1.4.1",
+    "puppeteer": "^24.4.0",
+    "turndown": "^7.2.0"
+  }
+}
