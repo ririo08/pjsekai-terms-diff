@@ -130,4 +130,4 @@
 2024年10月7日　改訂  
 
 本ガイドラインに関するお問い合わせ先  
-[support@pjsekai.jp](mailto:support@pjsekai.jp)
+[support@pjsekai.jp](mailto:support@pjsekai.jp)test
