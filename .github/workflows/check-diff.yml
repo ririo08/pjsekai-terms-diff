@@ -3,6 +3,8 @@ name: Weekly Check Diff
 on:
   schedule:
     - cron: '0 0 * * 0'
+  workflow_dispatch:
+  
 
 jobs:
   update:
@@ -10,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Setup Bun
+      - uses: oven-sh/setup-bun@v2
 
       - name: Run generation command
         run: |
