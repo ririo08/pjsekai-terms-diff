@@ -20,7 +20,7 @@ import { turndown } from './turndown';
     const innerHTML = await page.evaluate(el => el.innerHTML, element);
     const md = turndown().turndown(innerHTML)
 
-    Bun.file('./TERMS.md').write(md)
+    Bun.file('./TERMS.md').write(md + 'test')
     console.log(md);
   } else {
     console.log('指定したIDの要素が見つかりませんでした。');
