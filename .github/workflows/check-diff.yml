@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -15,17 +15,17 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Run generation command
+      - name: Run Bun Script
         run: |
           bun i
           bun start
 
       - name: Check for changes and commit if any
         run: |
-          # Gitのユーザー情報を設定（任意）
+          # Setting Git Account
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          # 変更があるか確認
+          # Check Git Diff
           if [ -n "$(git status --porcelain)" ]; then
             echo "Changes detected. Committing..."
             git add .
